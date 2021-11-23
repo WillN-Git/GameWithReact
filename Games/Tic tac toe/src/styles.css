@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+
+body {
+  background: rgba(20, 189, 172, 1);
+}
+
+.game-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+  border: none;
+  outline: none;
+  margin: 10px;
+  font-size: 5em;
+  font-family: "Nunito", sans-serif;
+  background: transparent;
+}
+
+.stick {
+  position: absolute;
+  border-radius: 3px;
+  background: rgba(84, 84, 84, 0.9);
+}
+
+.stick.horizontal {
+  height: 10px;
+  width: 0;
+  animation: 1s 0.8s scale-width forwards cubic-bezier(0.2, -2, 0.8, 2);
+}
+
+.stick.vertical {
+  height: 0;
+  width: 10px;
+  animation: 1s 0.8s scale-height forwards cubic-bezier(0.2, -2, 0.8, 2);
+}
+
+.stick.vertical.first {
+  transform: translate(113.5px, -15px);
+}
+
+.stick.vertical.second {
+  transform: translate(calc(113.5px * 2 + 7px), -15px);
+}
+
+.stick.horizontal.first {
+  transform: translate(-15px, 113.5px);
+}
+
+.stick.horizontal.second {
+  transform: translate(-15px, calc(113.5px * 2 + 7px));
+}
+
+.game-info {
+  font-size: 30px;
+  font-family: "Nunito", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.player-turn {
+  margin-top: 7%;
+}
+
+.winner {
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+}
+
+@keyframes scale-height {
+  from {
+    height: 0;
+  }
+  to {
+    height: calc(100px * 3 + 10px * 9);
+  }
+}
+
+@keyframes scale-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100px * 3 + 10px * 9);
+  }
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
